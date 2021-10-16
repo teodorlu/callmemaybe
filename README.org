@@ -25,5 +25,14 @@ API-et vårt er tre funksjoner:
 - create :: ny database
 - transact :: skriv data
 - find :: les data
+* Utviklingsoppsett
+Kjør
+
+#+begin_src shell
+npm innstall
+#+end_src
+
+så får du language server for Typescript.
 * Hvordan typesjekke?
+Hvis du har =typescript-language-server= på PATH,
 * Hvordan kjøre enhetstester?
