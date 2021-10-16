@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "typecheck": "node run tsc",
+    "test": "echo TODO setup tests"
+  },
   "devDependencies": {
     "tsc": "^2.0.3",
     "typescript-language-server": "^0.6.4"

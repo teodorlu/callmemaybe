@@ -13,8 +13,8 @@
     //    if you're adding your own, add them ABOVE the dotted line ^^^
     //    that way, these will override any we need that you accidentally add.
 
-    "noEmit": false,          // REQUIRED: `"noEmit": false
-    "module": "esnext",       // REQUIRED: "module": "esnext"
+    "noEmit": false, // REQUIRED: `"noEmit": false
+    "module": "esnext", // REQUIRED: "module": "esnext"
 
     // This is where the compiler should actually write your compiled files to
     //    If you change this, your server needs to change its root.
@@ -23,6 +23,6 @@
     // this is where you want the compiler to start if you want your compiled
     //    directory structure to match your source (you probably do)
     "rootDir": "./src",
-    "target": "es5",
+    "target": "es5"
   }
 }
