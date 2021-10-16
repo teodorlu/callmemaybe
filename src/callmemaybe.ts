@@ -1,3 +1,7 @@
 interface Booyah {
-    String fwiw
+    fwiw: string;
 }
+
+console.log("wtf")
+console.log("wtf")
+console.log("wtf")
