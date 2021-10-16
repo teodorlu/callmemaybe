@@ -25,3 +25,5 @@ API-et vårt er tre funksjoner:
 - create :: ny database
 - transact :: skriv data
 - find :: les data
+* Hvordan typesjekke?
+* Hvordan kjøre enhetstester?
