@@ -1,1 +1,27 @@
-#+TITLE: Call me maybe - DYI graph database
+#+TITLE: Call me maybe - Lag deg en grafdatabase
+
+På to timer skal du få lage din egen grafdatabase!
+
+* Entity Attribute Value - EAV
+Vi kommer til å bruke en normalisert datamodell som heter /EAV/. Da har vi en
+tabell som ser noe sånt ut:
+
+| E | A         | V          |
+|---+-----------+------------|
+| 1 | "navn"    | "Oddmund"  |
+| 1 | "spiller" | "Ukelele"  |
+| 2 | "navn"    | "Teodor"   |
+| 2 | "spiser"  | "Makaroni" |
+
+I JSON kunne vi representert den samme dataen i to objekter:
+
+#+begin_src json
+{"name": "Oddmund", "spiller": "Ukelele"}
+{"name": "Teodor", "spiser": "Makaroni"}
+#+end_src
+* API
+API-et vårt er tre funksjoner:
+
+- create :: ny database
+- transact :: skriv data
+- find :: les data
