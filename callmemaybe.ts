@@ -17,11 +17,12 @@ t.assertEquals(1, 1);
 
 // Bah, new we have to write a bunch of types.
 
-type ITransaction = {
-    find: string || string[];
+type ITransaction = {[prop: string]: any}[]
+interface IQuery {
+    find: string[];
+    where: [any, string, any][];
 }
-interface IQuery {}
-interface IResult {}
+type IResult = {[variable: string]: any}
 
 interface ICallMeMaybe {
     transact: (tx: ITransaction) => void;
