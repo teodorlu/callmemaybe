@@ -1,4 +1,4 @@
-#+TITLE: Call me maybe - Lag deg en grafdatabase
+#+TITLE: Lag deg en grafdatabase
 
 På to timer skal du få lage din egen grafdatabase!
 
