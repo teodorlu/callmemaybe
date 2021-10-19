@@ -22,9 +22,45 @@ interface IQuery {
     find: string[];
     where: [any, string, any][];
 }
-type IResult = {[variable: string]: any}
+type IResult = {[variable: string]: any}[]
 
 interface ICallMeMaybe {
     transact: (tx: ITransaction) => void;
-    find: (q: IQuery) => IResult;
+    query: (q: IQuery) => IResult;
+}
+
+// I think that will suffice.
+//
+// Let's write a test case first, implement later.
+
+function test(db: ICallMeMaybe): void {
+    db.transact([
+        {name: "Oddmund", spiller: "Ukelele"},
+        {name: "Teodor", spiser: "Brokkoli"}
+    ])
+
+    // Kanskje litt stygt -- men vi må skille på variabler (_name) og
+    // string-verdier (Ukelele).
+    //
+    // Her velger vi å si at strings som begynner på _ er variabler. Godt nok
+    // for oss for nå - neppe lurt hvis du skal skrive din egen grafdatabase.
+
+    // Hvem spiller ukelele?
+    t.assertArrayIncludes(
+        db.query({
+            find: ["_name"],
+            where: [["_name", "spiller", "Ukelele"]]
+        }).map(o => o._name) ,
+        "Oddmund"
+    )
+
+    // Hva spiser Teodor?
+    t.assertArrayIncludes(
+        db.query({
+            find: ["_spiser"],
+            where: [["_p", "name", "Teodor"],
+                    ["_p", "spiser", "_spiser"]]
+        }).map(o => o._spiser),
+        "Brokkoli"
+    )
 }
