@@ -14,3 +14,12 @@ console.log("Printing out stuff!!!")
 // funker med asserts.
 
 t.assertEquals(1, 1);
+
+interface ITransaction {}
+interface IQuery {}
+interface IResult {}
+
+interface ICallMeMaybe {
+    transact: (tx: ITransaction) => void;
+    find: (q: IQuery) => IResult;
+}
