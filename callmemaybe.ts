@@ -15,7 +15,11 @@ console.log("Printing out stuff!!!")
 
 t.assertEquals(1, 1);
 
-interface ITransaction {}
+// Bah, new we have to write a bunch of types.
+
+type ITransaction = {
+    find: string || string[];
+}
 interface IQuery {}
 interface IResult {}
 
